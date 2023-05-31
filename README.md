@@ -11,6 +11,9 @@ El funcionamiento es sencillo, simplemente deben ingresar a la página y hacer c
 Posteriormente deben llenar los datos requeridos para así añadir un producto de manera correcta. Y listo! Podrán visualizar la lista 
 de compras y marcar los productos ya comprados, además de eliminarlos posteriormente.
 
+Para poder trabajar en el proyecto adecuadamente utilicé *Vite* para poder visualizar la página en funcionamiento y *Tailwind CSS* 
+para darle estilos a la la página.
+
 ## Video
 El link donde se encuentra el video explicativo del parcial es el siguiente: 
 https://drive.google.com/drive/folders/1fs9sheIF2hUZLA5iAueDfnWcEa5kBDsk?usp=sharing
