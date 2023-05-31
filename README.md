@@ -104,4 +104,4 @@ La página en la que trabajé tiene los siguientes componentes:
 - TotalList: el componente sirve para mostrar el contador de productos existente en la lista.
 
 ## App
-Este archivo se encarga de poder mostrar todos los anteriores componentes, además de que 
+Este archivo se encarga de poder mostrar todos los anteriores componentes, además de que varias funcionalidades de useState y useEffect se encuentran aquí. El *main.jsx* es quien llama a *App.jsx* para poder ver la página funcionando en el localHost.
