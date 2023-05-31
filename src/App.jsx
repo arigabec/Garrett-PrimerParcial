@@ -2,14 +2,12 @@ import { useEffect, useState } from "react";
 import Modal from "./components/Modal";
 import Item from "./components/Item";
 import IconoNuevoGasto from "./assets/nuevo-gasto.svg";
+import ItemList from "./components/ItemList";
+import { TotalList } from "./components/TotalList";
 
 function App() {
-  const [newItem, setNewItem] = useState(
-    localStorage.getItem('newItem') ? 
-    localStorage.getItem('newItem') : false);
-  const [items, setItems] = useState(
-    localStorage.getItem('items') ? 
-    localStorage.getItem('items') : []);
+  const [newItem, setNewItem] = useState(false);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     console.log('Se cambio items', items);
@@ -23,14 +21,11 @@ function App() {
 
   return (
     <div className="flex flex-col items-center justify-start h-screen bg-blue-400">
-      <h1 className="text-3xl text-white font-bold m-5"> Lista de Compras</h1>
-      {
-        items.length > 0 && (
-          items.map((item) => {
-            return <Item nombreItem={item} setNewItem={setNewItem}/>
-          })
-        ) 
-      }
+      <h1 className="text-3xl text-white font-bold m-10"> Lista de Compras</h1>
+      
+      <ItemList items={items} setItems={setItems} setNewItem={setNewItem} />
+
+      <TotalList items={items} />
 
       <div className="fixed bottom-5 right-5">
         <img

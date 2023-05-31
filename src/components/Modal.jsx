@@ -1,7 +1,7 @@
 import CerrarBtn from "../assets/cerrar.svg";
 import FormNewItem from "./FormNewItem";
 
-const Modal = ({items, setItems, setNewItem}) => {
+const Modal = ({ items, setItems, setNewItem, editarItem }) => {
   const ocultarModal = () => {
     setNewItem(false);
   };

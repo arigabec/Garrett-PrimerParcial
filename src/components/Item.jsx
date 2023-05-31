@@ -8,7 +8,7 @@ import IconoBebidas from "../assets/drinks.png";
 import IconoHogar from "../assets/home.png";
 import IconoMascotas from "../assets/pets.png";
 import IconoHigiene from "../assets/cleaning.png";
-import Descripcion from "./Descripcion";
+import Descripcion from "./Description";
 
 const diccionarioIconos = {
   Abarrotes: IconoAbarrotes,
@@ -21,7 +21,7 @@ const diccionarioIconos = {
   Higiene: IconoHigiene,
 };
 
-const Item = ({ nombreItem, setNewItem }) => {
+const Item = ({ item, setNewItem, deleteItem }) => {
   const [completado, setCompletado] = useState(false);
   const [visible, setVisible] = useState(true);
 
@@ -30,24 +30,24 @@ const Item = ({ nombreItem, setNewItem }) => {
   };
 
   const deleteTask = () => {
+    deleteItem(item);
     setVisible(!visible);
   };
 
   const editTask = () => {
-    console.log("EDITAR");
     setNewItem(true);
   };
 
   return (
     <>
       {visible && (
-        <div className="flex flex-row justify-between items-center p-2 m-3 bg-white shadow-lg rounded-md py-5 w-full lg:w-1/2 mx-auto">
-          <img className="ml-5" src={diccionarioIconos[nombreItem.categoria]} alt="Icono Gasto" />
+        <div className="flex flex-row justify-between items-center p-2 m-3 bg-white shadow-lg rounded-md py-5 w-full mx-auto">
+          <img className="ml-5" src={diccionarioIconos[item.categoria]} alt="Icono Gasto" />
 
           <div>
-            <Descripcion nombre="Producto" valor={nombreItem.nombre} completado={completado} />
-            <Descripcion nombre="Cantidad" valor={nombreItem.cantidad} completado={completado} />
-            <Descripcion nombre="Categoria" valor={nombreItem.categoria} completado={completado} /> 
+            <Descripcion nombre="Producto" valor={item.nombre} completado={completado} />
+            <Descripcion nombre="Cantidad" valor={item.cantidad} completado={completado} />
+            <Descripcion nombre="Categoria" valor={item.categoria} completado={completado} /> 
           </div>
           
           <div className="flex flex-row">

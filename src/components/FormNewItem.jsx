@@ -16,7 +16,6 @@ const FormNewItem = ({ items, setItems, setNewItem }) => {
     ];
     setItems([...items, ...item]);
     setNewItem(false);
-    console.log(nombre);
   };
 
   return (
